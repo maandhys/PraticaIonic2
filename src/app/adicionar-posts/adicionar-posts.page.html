@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>adicionarPosts</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Adicionar Posts</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content >
+  <form style="margin: 16px" #form="ngForm" (ngSubmit)="AddPost(form)">
+    <ion-item>
+      <ion-label>ID Usuário: </ion-label>
+      <ion-input name="userId" [(ngModel)]="formulario.userId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ID Post: </ion-label>
+      <ion-input name="id" [(ngModel)]="formulario.id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Título do Post: </ion-label>
+      <ion-input name="title" [(ngModel)]="formulario.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Conteúdo do Post" name="body" [(ngModel)]="formulario.body"></ion-textarea>
+    </ion-item>
+    <ion-button (click) ="adicionarPost()"  type="submit">Enviar</ion-button>
+  </form>
 </ion-content>

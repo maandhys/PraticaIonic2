@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdicionarPostsPage implements OnInit {
 
+  formulario = {
+    userId: '',
+    id: '',
+    title: '',
+    body: ''
+  }
   constructor() { }
 
   ngOnInit() {
   }
 
+  adicionarPost(form) {
+    alert("Post adicionado com sucesso!")
+  }
 }
